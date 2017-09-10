@@ -9,9 +9,11 @@ import toastr from 'toastr';
 export class ManageCoursePage extends React.Component {
   constructor(props, context) {
     super(props, context);
+    //todo remove
+    //debugger;
 
     this.state = {
-      course: Object.assign({}, this.props.course),
+      course: this.props.course,
       errors: {},
       saving: false
     };
@@ -27,11 +29,14 @@ export class ManageCoursePage extends React.Component {
     }
   }
 
+
   updateCourseState(event) {
-    const field = event.target.name;
-    let course = Object.assign({}, this.state.course);
-    course[field] = event.target.value;
-    return this.setState({course: course});
+    //todo remove
+
+   let test= event.target.value;
+   let newCourse = Object.assign({}, this.state.course);
+   newCourse[event.target.name] =test;
+   return this.setState({course: newCourse});
   }
 
   courseFormIsValid() {
